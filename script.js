@@ -1,67 +1,48 @@
 let classifier;
-  // URL de nuestro módelo de inteligencia artificial
-  let imageModelURL = 'https://teachablemachine.withgoogle.com/models/pSIOEG5Ij/';
-  
-  let video;
-  let flippedVideo;
-  let label = "";
+let imageModelURL = 'Tu_modelo'; // URL del modelo de Teachable Machine
+let video, flippedVideo;
+let label = "";
 
-  // Cargamos el modelo
-  function preload() {
-    classifier = ml5.imageClassifier(imageModelURL + 'model.json');
-  }
-
-  function setup() {
-    createCanvas(320, 260);
-    // Empezamos la captura de video
-    video = createCapture(VIDEO);
-    video.size(320, 240);
-    video.hide();
-
-    flippedVideo = ml5.flipImage(video);
-    // Empezamos a correr el modelo
-    classifyVideo();
-  }
-
-  function draw() {
-    background(0);
-    // Grabación constante del video
-    image(flippedVideo, 0, 0);
-
-    // Escribimos en pantalla la predicción
-    fill(255);
-    textSize(16);
-    textAlign(CENTER);
-    text(label, width / 2, height - 4);
- 
-      let emoji;
-  if (label == "Class 1") {
-    emoji = "😊";
-  } else if (label == "Class 2") {
-    emoji = "🤣";
-  } else if (label == "Class 3") {
-    emoji = "🖐";
-  }
-  textSize(100);
-  text(emoji, width / 2, height / 2);
+function preload() {
+  classifier = ml5.imageClassifier(imageModelURL + 'model.json'); // Carga el modelo antes de que se cargue la página
 }
 
-  // Obtén la predicción del video actual
-  function classifyVideo() {
-    flippedVideo = ml5.flipImage(video)
-    classifier.classify(flippedVideo, gotResult);
-    flippedVideo.remove();
+function setup() {
+  createCanvas(320, 260); // Crea un canvas de 320x260 píxeles
+  video = createCapture(VIDEO); // Captura el video de la cámara
+  video.size(320, 240); // Establece el tamaño del video
+  video.hide(); // Oculta el video original
+  flippedVideo = ml5.flipImage(video); // Invierte el video horizontalmente
+  classifyVideo(); // Clasifica el video
+}
 
+function draw() {
+  background(0); // Establece el fondo negro
+  image(flippedVideo, 0, 0); // Muestra el video invertido
+  fill(255); // Establece el color de relleno blanco
+  textSize(16); // Establece el tamaño de la fuente
+  textAlign(CENTER); // Establece la alineación del texto al centro
+  text(label, width / 2, height - 4); // Muestra la etiqueta de la clasificación en la parte inferior del canvas
+  let emoji = { // Objeto que asocia las etiquetas de clasificación con emojis
+    "Class 1": "😊",
+    "Class 2": "🤣",
+    "Class 3": "🖐"
+  }[label];
+  textSize(100); // Establece el tamaño de la fuente
+  text(emoji, width / 2, height / 2); // Muestra el emoji correspondiente a la etiqueta de clasificación en el centro del canvas
+}
+
+function classifyVideo() {
+  flippedVideo = ml5.flipImage(video) // Invierte el video horizontalmente
+  classifier.classify(flippedVideo, gotResult); // Clasifica el video y llama a la función gotResult cuando se obtienen los resultados
+  flippedVideo.remove(); // Elimina el video invertido
+}
+
+function gotResult(error, results) {
+  if (error) {
+    console.error(error); // Muestra el error en la consola
+    return;
   }
-
-  // Por si tenemos un error
-  function gotResult(error, results) {
-    
-    if (error) {
-      console.error(error);
-      return;
-    }
-
-    label = results[0].label;
-    classifyVideo();
-  }
+  label = results[0].label; // Obtiene la etiqueta de clasificación del primer resultado
+  classifyVideo(); // Clasifica el video de nuevo
+}

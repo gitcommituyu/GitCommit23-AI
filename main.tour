@@ -1,0 +1,27 @@
+{
+
+  "$schema": "https://aka.ms/codetour-schema",
+
+  "title": "Web, IA y Copilot",
+
+  "steps": [
+
+    {
+        "file": "script.js",
+        "line": 1,
+        "description": "Hola! Bienvenid@ al codespace de tu primera inteligencia artificial integrada en una página web"
+    },
+
+    {
+        "file": "index.html"
+        "line": 6,
+        "description": "Para poder integrar de manera sencilla nuestro modelo a nuestra página web, estaremos utilizando ML5 y P5, librerías de JavaScript que nos ayudarán a llevar nuestra inteligencia artificial a la web"
+    }.
+
+    {
+        "file": "script.js",
+        "line": 2,
+        "description": "Lo que deberás hacer es crear una página web integrando tu modelo de inteligencia artificial y manteniendo tus cambios en GitHub. Para poder integrar nuestro modelo, debemos indicar la URL entregado por Teachable Machine. Si deseas aprender más sobre lo que está pasando acá, puedes leer el código;)"
+    }
+  ]
+}
