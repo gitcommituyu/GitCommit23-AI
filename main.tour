@@ -13,10 +13,10 @@
     },
 
     {
-        "file": "index.html"
+        "file": "index.html",
         "line": 6,
         "description": "Para poder integrar de manera sencilla nuestro modelo a nuestra página web, estaremos utilizando ML5 y P5, librerías de JavaScript que nos ayudarán a llevar nuestra inteligencia artificial a la web"
-    }.
+    },
 
     {
         "file": "script.js",
