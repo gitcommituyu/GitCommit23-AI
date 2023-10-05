@@ -9,7 +9,7 @@
     {
         "file": "script.js",
         "line": 1,
-        "description": "Hola! Bienvenid@ al codespace de tu primera inteligencia artificial integrada en una página web"
+        "description": "Hola! 👋 Bienvenid@ al codespace de tu primera inteligencia artificial integrada en una página web"
     },
 
     {
@@ -21,7 +21,7 @@
     {
         "file": "script.js",
         "line": 2,
-        "description": "Lo que deberás hacer es crear una página web integrando tu modelo de inteligencia artificial y manteniendo tus cambios en GitHub. Para poder integrar nuestro modelo, debemos indicar la URL entregado por Teachable Machine. Si deseas aprender más sobre lo que está pasando acá, puedes leer el código;)"
+        "description": "Lo que deberás hacer es crear una página web integrando tu modelo de inteligencia artificial 🤖 y manteniendo tus cambios en GitHub. Para poder integrar nuestro modelo, debemos indicar la URL entregado por Teachable Machine. Si deseas aprender más sobre lo que está pasando acá, puedes leer el código;)"
     }
   ]
 }

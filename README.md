@@ -1,2 +1,2 @@
-# GitCommit23-AI
-Repositorio plantilla para la actividad final de Git Commit 2023
+# Inteligencia Artificial: El futuro de la programación
+Hello World! 👋 Este es el repositorio de inteligencia artificial de Git Commit 2023.
